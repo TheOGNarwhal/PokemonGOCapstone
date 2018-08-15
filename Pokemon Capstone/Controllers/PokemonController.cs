@@ -50,7 +50,7 @@ namespace Pokemon_Capstone.Controllers
         [HttpGet]
         public ActionResult DeletePokemon(int PokemonToDeleteID) 
         {
-            
+            //
             PokemonDAO pokemonOption = new PokemonDAO();
             pokemonOption.PokemonID = PokemonToDeleteID;
             PokemonData.DeletePokemon(pokemonOption);
