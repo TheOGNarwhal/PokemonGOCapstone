@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Pokemon GO Fun</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div style="font-family: 'Pokemon Solid'">
+                @Html.ActionLink("Pokemon GO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })
+                </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="font-family: 'Pokemon Solid'">
+                    @if ((string)Session["Username"] != null)
+                    {
+                    <li>@Html.ActionLink("Pokemon", "ReadPokemon", "Pokemon", "Pokemon", new {@style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    <li>@Html.ActionLink("Teams", "UserTeams", "Team", "Team", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    <li>@Html.ActionLink("Groups", "About", "Home", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    <li>@Html.ActionLink("Profile", "UserProfile", "User", "User", new {area = " ", @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    }
+                    @if ((string)Session["Username"] == null)
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "User","User", new {area = " ", @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>                    
+                    }
+                    @if ((string)Session["Username"] != null)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "User","User", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p style="font-family: 'Pokemon Solid'; color: yellow; text-shadow: 1.5px 1px blue; letter-spacing: 1.5px">&copy; @DateTime.Now.Year - Pokemon Go Capstone</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

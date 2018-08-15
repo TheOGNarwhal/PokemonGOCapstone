@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="color: yellow; background-color: #515151">
+    <h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 1.5px">Pokemon GO! Fun</h1>
+    <p class="lead" style="font-family: 'Pokemon Solid'; color: yellow; letter-spacing: 1px">Pokemon GO! is A mobile adaptation of the popular Nintendo franchise Pokemon developed by Niantec</p>
+    <p><a href="https://pokemongolive.com/en/" class="btn btn-lg" style="font-family: 'Pokemon Solid'; text-shadow: 1px 1px blue; background-color: black; color: yellow; letter-spacing: 1px">Learn More &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 1.5px">About My Capstone</h2>
+        <p style="font-family: 'Pokemon Solid'; letter-spacing: 1px">
+          My Capstone is an application that allows a user to create an account and login in order to 
+          view pokemon, create pokemon Teams, and Create groups for multiple users. 
+        </p>
+        <p>@Html.ActionLink("Learn More »", "About", "Home", new { area = "" }, new { @class = "btn btn-default", @style = "font-family: Pokemon Solid; text-shadow: 1px 1px blue; background-color: black; color: yellow; letter-spacing: 1px" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 1.5px">About Pokemon</h2>
+        <p style="font-family: 'Pokemon Solid'; letter-spacing: 1px">Pokemon has alot more than just a mobile game. As stated, the pokemon franchise is very popular and has A card game, video games, an anime as well as merchandise and other novelty iteams</p>
+        <p><a class="btn" style="font-family: 'Pokemon Solid'; text-shadow: 1px 1px blue; background-color: black; color: yellow; letter-spacing: 1px" href="https://www.pokemon.com/us/">Learn More &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 1.5px">About Niantic</h2>
+        <p style="font-family: 'Pokemon Solid'">Niantic, Inc. is an American software development company based in San Francisco, which is best known for developing the augmented reality mobile games Ingress, Pokémon Go and the upcoming Harry Potter: Wizards Unite.</p>
+        <p><a class="btn" style="font-family: 'Pokemon Solid'; text-shadow: 1px 1px blue; background-color: black; color: yellow; letter-spacing: 1px" href="https://www.nianticlabs.com/">Learn More &raquo;</a></p>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+﻿@model Pokemon_Capstone.Models.PokemonViewModel
+@using Pokemon_Capstone.Models
+@{
+    ViewBag.Title = "ViewPokemon";
+}
+
+<h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Pokemon</h1>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>FirstType</th>
+        <th>SecondType</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tr>
+        @{PokemonPO newPokemon = new PokemonPO();}
+        @using (Html.BeginForm("CreatePokemon", "Pokemon", FormMethod.Post))
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => newPokemon.PokemonName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => newPokemon.PokemonName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => newPokemon.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => newPokemon.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(models => newPokemon.PkFirstID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => newPokemon.PkFirstID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(models => newPokemon.PkSecondID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => newPokemon.PkSecondID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>@Html.ActionLink("Type Chart", "ViewTypes", "Type", new { area = " " }, new { @class = "btn btn-info" })</td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+            </td>
+        }
+    </tr>
+    @foreach (PokemonPO pokemonInfo in Model.PokemonList)
+    {
+    {pokemonInfo.EnableViewState = true;}
+    <tr>
+        @using (Html.BeginForm("UpdatePokemon", "Pokemon", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => pokemonInfo.PokemonID)
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => pokemonInfo.PokemonName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.PokemonName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => pokemonInfo.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(models => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })<br>
+                        @Html.DropDownListFor(Model => pokemonInfo.PkFirstID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => pokemonInfo.PkFirstID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(models => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })<br>
+                        @Html.DropDownListFor(models => pokemonInfo.PkSecondID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control", })
+                        @Html.ValidationMessageFor(model => pokemonInfo.PkSecondID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            <td>@Html.ActionLink("Delete", "DeletePokemon", new { PokemonToDeleteID = pokemonInfo.PokemonID }, new { @class = "btn btn-danger" })</td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <input type="submit" value="Update" class="btn btn-primary" />
+                    </div>
+                </div>
+            </td>
+        }
+    </tr>
+    }
+</table>
+<div class="col-md-10">
+    @Html.ActionLink("View Pokemon", "ReadPokemon", "Pokemon", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
+</div>
+

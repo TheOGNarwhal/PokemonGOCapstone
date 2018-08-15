@@ -1,0 +1,852 @@
+﻿@model Pokemon_Capstone.Models.TypeViewModel
+@using Pokemon_Capstone.Models
+@{
+    ViewBag.Title = "ViewPokemon";
+}
+
+<h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Type Advantage Chart</h2>
+<table class="table-bordered table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Normal</th>
+        <th>Fire</th>
+        <th>Water</th>
+        <th>Grass</th>
+        <th>Electric</th>
+        <th>Ice</th>
+        <th>Fighting</th>
+        <th>Poision</th>
+        <th>Ground</th>
+        <th>Flying</th>
+        <th>Psychic</th>
+        <th>Bug</th>
+        <th>Rock</th>
+        <th>Ghost</th>
+        <th>Dragon</th>
+        <th>Dark</th>
+        <th>Steel</th>
+        <th>Fairy</th>
+    </tr>
+    @foreach (TypePO typeInfo in Model.TypeList)
+    {
+        if (typeInfo.TypeName == "NONE")
+        {
+            
+        }
+        else
+        {
+    <tr>
+        <td>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => typeInfo.TypeName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => typeInfo.TypeName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        @if (typeInfo.xNormal != 1 && typeInfo.xNormal != 2 & typeInfo.xNormal != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xNormal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xNormal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xNormal != 0 & typeInfo.xNormal != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xNormal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xNormal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xNormal != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xNormal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xNormal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xNormal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xNormal, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xFire != 1 && typeInfo.xFire != 2 & typeInfo.xFire != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFire, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFire, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFire != 0 & typeInfo.xFire != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFire, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFire, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFire != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFire, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFire, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFire, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFire, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xWater != 1 && typeInfo.xWater != 2 & typeInfo.xWater != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xWater, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xWater, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xWater != 0 & typeInfo.xWater != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xWater, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xWater, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xWater != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xWater, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xWater, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xWater, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xWater, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xGrass != 1 && typeInfo.xGrass != 2 & typeInfo.xGrass != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGrass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGrass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGrass != 0 & typeInfo.xGrass != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGrass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGrass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGrass != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGrass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGrass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGrass, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGrass, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xElectric != 1 && typeInfo.xElectric != 2 & typeInfo.xElectric != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xElectric, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xElectric, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xElectric != 0 & typeInfo.xElectric != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xElectric, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xElectric, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xElectric != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xElectric, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xElectric, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xElectric, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xElectric, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xIce != 1 && typeInfo.xIce != 2 & typeInfo.xIce != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xIce, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xIce, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xIce != 0 & typeInfo.xIce != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xIce, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xIce, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xIce != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xIce, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xIce, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xIce, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xIce, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xFighting != 1 && typeInfo.xFighting != 2 & typeInfo.xFighting != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFighting, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFighting, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFighting != 0 & typeInfo.xFighting != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFighting, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFighting, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFighting != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFighting, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFighting, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFighting, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFighting, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xPoision != 1 && typeInfo.xPoision != 2 & typeInfo.xPoision != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPoision, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPoision, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xPoision != 0 & typeInfo.xPoision != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPoision, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPoision, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xPoision != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPoision, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPoision, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPoision, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPoision, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xGround != 1 && typeInfo.xGround != 2 & typeInfo.xGround != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGround, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGround, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGround != 0 & typeInfo.xGround != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGround, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGround, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGround != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGround, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGround, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGround, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGround, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xFlying != 1 && typeInfo.xFlying != 2 & typeInfo.xFlying != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFlying, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFlying, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFlying != 0 & typeInfo.xFlying != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFlying, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFlying, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFlying != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFlying, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFlying, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFlying, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFlying, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xPsychic != 1 && typeInfo.xPsychic != 2 & typeInfo.xPsychic != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPsychic, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPsychic, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xPsychic != 0 & typeInfo.xPsychic != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPsychic, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPsychic, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xPsychic != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPsychic, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPsychic, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xPsychic, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xPsychic, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xBug != 1 && typeInfo.xBug != 2 & typeInfo.xBug != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xBug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xBug, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xBug != 0 & typeInfo.xBug != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xBug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xBug, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xBug != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xBug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xBug, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xBug, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xBug, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xRock != 1 && typeInfo.xRock != 2 & typeInfo.xRock != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xRock, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xRock, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xRock != 0 & typeInfo.xRock != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xRock, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xRock, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xRock != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xRock, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xRock, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xRock, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xRock, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xGhost != 1 && typeInfo.xGhost != 2 & typeInfo.xGhost != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGhost, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGhost, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGhost != 0 & typeInfo.xGhost != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGhost, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGhost, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xGhost != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGhost, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGhost, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xGhost, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xGhost, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xDragon != 1 && typeInfo.xDragon != 2 & typeInfo.xDragon != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDragon, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDragon, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xDragon != 0 & typeInfo.xDragon != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDragon, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDragon, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xDragon != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDragon, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDragon, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDragon, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDragon, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xDark != 1 && typeInfo.xDark != 2 & typeInfo.xDark != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xDark != 0 & typeInfo.xDark != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xDark != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xDark, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xDark, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xSteel != 1 && typeInfo.xSteel != 2 & typeInfo.xSteel != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xSteel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xSteel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xSteel != 0 & typeInfo.xSteel != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xSteel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xSteel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xSteel != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xSteel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xSteel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xSteel, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xSteel, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (typeInfo.xFairy != 1 && typeInfo.xFairy != 2 & typeInfo.xFairy != 0)
+        {
+            <td style="background-color: red; color: black">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFairy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFairy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFairy != 0 & typeInfo.xFairy != 1)
+        {
+            <td style="background-color: lawngreen; color: white">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFairy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFairy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else if (typeInfo.xFairy != 1)
+        {
+            <td style="background-color: black; color: yellow">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFairy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFairy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        else
+        {
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => typeInfo.xFairy, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => typeInfo.xFairy, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+    </tr>
+        }
+    }
+</table>
+<br>
+<h3 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Key</h3>
+<div>
+<p style="font-family: 'Pokemon Solid'">The pokemon along the top are the Defending pokemon and the pokemon along the left side are the Attacking pokemon.</p>
+<p style="background-color: lawngreen; color: white; border: 1px solid black; border-radius: 5px; font-family: 'Pokemon Solid'; padding: 5px">Super Effective - GREEN</p>
+<p style="border: 1px solid black; border-radius: 5px; font-family: 'Pokemon Solid'; padding: 5px">Normal Effective - WHITE</p>
+<p style="background-color: red; color: black; border: 1px solid black; border-radius: 5px; font-family: 'Pokemon Solid'; padding: 5px">Not Very Effective - RED</p>
+<p style="background-color: black; color: yellow; border: 1px solid black; border-radius: 5px; font-family: 'Pokemon Solid'; padding: 5px">Cannot Hit - BLACK</p>
+</div>
+

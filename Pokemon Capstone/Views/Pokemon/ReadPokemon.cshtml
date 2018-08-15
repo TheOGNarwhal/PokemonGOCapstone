@@ -1,0 +1,456 @@
+﻿@model Pokemon_Capstone.Models.PokemonViewModel
+@using Pokemon_Capstone.Models
+@{
+    ViewBag.Title = "ReadPokemon";
+}
+
+<h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Pokemon</h2>
+<table class="table table-bordered table-striped table-hover">
+    <tr style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'; background-color: #000000">
+        <th>Name</th>
+        <th>Description</th>
+        <th>FirstType</th>
+        <th>SecondType</th>
+    </tr>
+    @foreach (PokemonPO pokemonInfo in Model.PokemonList)
+    {
+        @Html.HiddenFor(model => pokemonInfo.PokemonID, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => pokemonInfo.PokemonID, "", new { @class = "text-danger" })
+    <tr>
+        <td style="background-color: #cbcbcb;color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => pokemonInfo.PokemonName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => pokemonInfo.PokemonName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        <td style="font-family: 'Pokemon Solid'">
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => pokemonInfo.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => pokemonInfo.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        @if (pokemonInfo.FirstType == "Normal")
+        {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Fire")
+        {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Water")
+        {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Grass")
+        {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Electric")
+        {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Ice")
+        {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Fighting")
+        {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Poison")
+        {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Ground")
+        {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Flying")
+        {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Psychic")
+        {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Bug")
+        {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Rock")
+        {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Ghost")
+        {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Dragon")
+        {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Dark")
+        {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Steel")
+        {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.FirstType == "Fairy")
+        {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.FirstType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.FirstType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "NONE")
+        {
+            <td style="background-color: #626262">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Normal")
+        {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Fire")
+        {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Water")
+        {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Grass")
+        {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Electric")
+        {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Ice")
+        {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Fighting")
+        {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Poison")
+        {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Ground")
+        {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Flying")
+        {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Psychic")
+        {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Bug")
+        {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Rock")
+        {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Ghost")
+        {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Dragon")
+        {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Dark")
+        {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Steel")
+        {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+        @if (pokemonInfo.SecondType == "Fairy")
+        {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => pokemonInfo.SecondType, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => pokemonInfo.SecondType, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+        }
+    </tr>
+    }
+</table>
+@if ((int)Session["RoleID"] != 1)
+{
+<div class="col-md-10">
+    @Html.ActionLink("Alter Pokemon", "ViewPokemon", "Pokemon", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
+</div>
+}
+<div class="col-md-10">
+    @Html.ActionLink("View Type Chart", "ViewTypes", "Type", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
+</div>
+<br>
+<br>
+

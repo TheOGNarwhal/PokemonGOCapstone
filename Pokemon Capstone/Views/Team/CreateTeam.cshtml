@@ -1,0 +1,69 @@
+﻿@model Pokemon_Capstone.Models.TeamPO
+@using Pokemon_Capstone.Models
+@{
+
+    ViewBag.Title = "CreateTeam";
+}
+
+<h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'">Create Your Team</h2>
+@using (Html.BeginForm("CreateTeam", "Team", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.CreatorID)
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TeamName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => Model.TeamName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => Model.TeamName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.FirstPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.FirstPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecondPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.SecondPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.SecondPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThirdPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.ThirdPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.ThirdPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FourthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.FourthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.FourthPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FifthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.FifthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.FifthPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.SixthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(models => Model.SixthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => Model.SixthPkID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Create" class="btn" style="color: yellow; text-shadow: 1px 1px blue; background-color: black; font-family: 'Pokemon Solid'" />
+            </div>
+        </div>
+    </div>
+}
+
