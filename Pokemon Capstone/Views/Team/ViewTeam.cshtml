@@ -12,22 +12,30 @@
     @Html.HiddenFor(model => model.TeamID)
     @Html.HiddenFor(model => model.CreatorID)
     <tr>
-        <th>Atribute</th>
-        <th>Pokemon</th>
-        <th>First Type
-        <th>Second Type</th>
-    </tr>
-    <tr>
         <td style="background-color: #cbcbcb">
             <div class="form-group">
                 @Html.LabelFor(model => model.TeamName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
                     @Html.EditorFor(model => Model.TeamName, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => Model.TeamName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        <td style="background-color: black">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-6">
+                    <p>Type One</p>
+                </div>
+            </div>
+        </td>
+        <td style="background-color: black">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-6">
+                    <p>Type Two</p>
                 </div>
             </div>
         </td>
@@ -38,11 +46,10 @@
                 @Html.LabelFor(model => model.FirstPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.FirstPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
+                    @Html.DropDownListFor(models => Model.FirstPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => Model.FirstPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -461,11 +468,10 @@
                 @Html.LabelFor(model => model.SecondPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.SecondPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
+                    @Html.DropDownListFor(models => Model.SecondPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => Model.SecondPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -884,11 +890,10 @@
                 @Html.LabelFor(model => model.ThirdPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.ThirdPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
+                    @Html.DropDownListFor(models => Model.ThirdPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => Model.ThirdPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -1307,11 +1312,10 @@
                 @Html.LabelFor(model => model.FourthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.FourthPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
+                    @Html.DropDownListFor(models => Model.FourthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => Model.FourthPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -1730,11 +1734,10 @@
                 @Html.LabelFor(model => model.FifthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.FifthPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
+                    @Html.DropDownListFor(models => Model.FifthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => Model.FifthPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -2153,12 +2156,11 @@
                 @Html.LabelFor(model => model.SixthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
             </div>
         </td>
-        <td>
+        <td style="background-color: #7F09AF">
             <div class="form-group">
                 <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.SixthPkID, (List<SelectListItem>
-                        )ViewBag.Pokemon, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => Model.SixthPkID, "", new { @class = "text-danger" })
+                    @Html.DropDownListFor(models => Model.SixthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => Model.SixthPkID, "", new { @class = "text-danger" })
                 </div>
             </div>
         </td>
@@ -2571,12 +2573,49 @@
         }
     </tr>
     <tr>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <td><input type="submit" value="Update" class="btn form-group" style="color: yellow; text-shadow: 1px 1px blue; background-color: black; font-family: 'Pokemon Solid'; letter-spacing: 1.5px" />
-             @Html.ActionLink("Go Back", "UserTeams", "Team", new { @class = "form-group btn btn-default", @style = "color: yellow; background-color: black; text-shadow: 2px 1px blue; font-family: pokemon solid; letter-spacing: 1.5px" })</td>
-        </DIV>
-    </DIV>
+        <td style="background-color: green">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-10">
+                    <p>Your Team Is Best Against</p>
+                </div>
+            </div>
+        </td>
+        <td style="background-color: red">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-10">
+                    <p>Worst Against</p>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: hotpink">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-6">
+                    @Html.DisplayFor(model => Model.Pk6Type2Name, new { htmlAttributes = new { @class = "form-control col-md-6" } })
+                    @Html.ValidationMessageFor(model => Model.Pk6Type2Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        
+        <td style="background-color: midnightblue">
+            <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                <div class="col-md-10">
+                    @Html.DisplayFor(model => Model.Pk6Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => Model.Pk6Type2Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" value="Update" class="btn form-group" style="color: yellow; text-shadow: 1px 1px blue; background-color: black; font-family: 'Pokemon Solid'; letter-spacing: 1.5px" />
+                    @Html.ActionLink("Go Back", "UserTeams", "Team", new { @class = "form-group btn btn-default", @style = "color: yellow; background-color: black; text-shadow: 2px 1px blue; font-family: pokemon solid; letter-spacing: 1.5px" })
+                </div>
+            </div>
+        </td>
     </tr>
     }
 </table>   
