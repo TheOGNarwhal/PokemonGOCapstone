@@ -71,10 +71,6 @@ namespace Pokemon_Capstone.Controllers
         {
             ViewBag.Pokemon = new List<SelectListItem>();
             List<PokemonPO> Pokemon = mapper.PokemonMap(PokemonData.GetAllPokemon());
-            UserDAO UserToGet = new UserDAO();
-            UserToGet.UserID = (int)Session["UserID"];
-            UserDAO SelectedUser = UserData.SelectUser(UserToGet);
-            int SelectedID = SelectedUser.FavoritePokemonID;
             foreach (PokemonPO PokemonList in Pokemon)
             {
                 ViewBag.Pokemon.Add(new SelectListItem { Text = PokemonList.PokemonName, Value = PokemonList.PokemonID.ToString()});
