@@ -876,36 +876,852 @@
                 </td>
             }
         </tr>
-    <tr>
-        <td style="background-color: #cbcbcb">
-            <div class="form-group">
-                @Html.LabelFor(model => model.ThirdPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
-            </div>
-        </td>
-        <td>
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.ThirdPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => Model.ThirdPkID, "", new { @class = "text-danger" })
+        <tr>
+            <td style="background-color: #cbcbcb">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ThirdPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
                 </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td style="background-color: #cbcbcb">
-            <div class="form-group">
-                @Html.LabelFor(model => model.FourthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
-            </div>
-        </td>
-        <td>
-            <div class="form-group">
-                <div class="col-md-10">
-                    @Html.DropDownListFor(models => Model.FourthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => Model.FourthPkID, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(models => Model.ThirdPkID, (List<SelectListItem>
+                            )ViewBag.Pokemon, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => Model.ThirdPkID, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
-        </td>
-    </tr>
+            </td>
+            @if (Model.Pk3Type1 == 1)
+            {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 2)
+            {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 3)
+            {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 4)
+            {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 5)
+            {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 6)
+            {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 7)
+            {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 8)
+            {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 9)
+            {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 10)
+            {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 11)
+            {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 12)
+            {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 13)
+            {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 14)
+            {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 15)
+            {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 16)
+            {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 17)
+            {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type1 == 18)
+            {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 19)
+            {
+            <td style="background-color: #626262">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 1)
+            {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 2)
+            {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 3)
+            {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 4)
+            {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 5)
+            {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 6)
+            {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 7)
+            {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 8)
+            {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 9)
+            {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 10)
+            {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 11)
+            {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 12)
+            {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 13)
+            {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 14)
+            {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 15)
+            {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 16)
+            {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 17)
+            {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk3Type2 == 18)
+            {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk3Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk3Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+        </tr>
+        <tr>
+            <td style="background-color: #cbcbcb">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FourthPokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; letter-spacing: 1px" })
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(models => Model.FourthPkID, (List<SelectListItem>
+                            )ViewBag.Pokemon, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => Model.FourthPkID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            @if (Model.Pk2Type1 == 1)
+            {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 2)
+            {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 3)
+            {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 4)
+            {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 5)
+            {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 6)
+            {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 7)
+            {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 8)
+            {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 9)
+            {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 10)
+            {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 11)
+            {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 12)
+            {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 13)
+            {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 14)
+            {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 15)
+            {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 16)
+            {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 17)
+            {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type1 == 18)
+            {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type1Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type1Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 19)
+            {
+            <td style="background-color: #626262">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 1)
+            {
+            <td style="background-color: grey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 2)
+            {
+            <td style="background-color: orange">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 3)
+            {
+            <td style="background-color: mediumblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 4)
+            {
+            <td style="background-color: forestgreen">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 5)
+            {
+            <td style="background-color: gold">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 6)
+            {
+            <td style="background-color: deepskyblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 7)
+            {
+            <td style="background-color: red">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 8)
+            {
+            <td style="background-color: purple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 9)
+            {
+            <td style="background-color: sandybrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 10)
+            {
+            <td style="background-color: mediumpurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 11)
+            {
+            <td style="background-color: deeppink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 12)
+            {
+            <td style="background-color: greenyellow">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 13)
+            {
+            <td style="background-color: saddlebrown">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 14)
+            {
+            <td style="background-color: rebeccapurple">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 15)
+            {
+            <td style="background-color: darkslateblue">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 16)
+            {
+            <td style="background-color: black">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk2Type2 == 17)
+            {
+            <td style="background-color: lightgrey">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+            @if (Model.Pk4Type2 == 18)
+            {
+            <td style="background-color: hotpink">
+                <div class="form-group" style="color: yellow; text-shadow: 1px 1px blue; font-family: 'Pokemon Solid'">
+                    <div class="col-md-10">
+                        @Html.DisplayFor(model => Model.Pk2Type2Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => Model.Pk2Type2Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </td>
+            }
+        </tr>
     <tr>
         <td style="background-color: #cbcbcb">
             <div class="form-group">
