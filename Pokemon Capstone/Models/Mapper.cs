@@ -118,7 +118,7 @@ namespace Pokemon_Capstone.Models
                 UserToView.GroupThreeName = UserToMap.GroupThreeName;
                 UserToView.GroupThreeID = UserToMap.GroupThreeID;
                 UserToView.RoleName = UserToMap.RoleName;
-                UserToView.RoleID = UserToView.RoleID;
+                UserToView.RoleID = UserToMap.RoleID;
                 UserToReturn = UserToView;
             }
             return UserToReturn;

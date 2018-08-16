@@ -3,99 +3,100 @@
 @{
     ViewBag.Title = "Profile";
 }
-
-<h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'">Update Your Profile</h2>
-@using (Html.BeginForm("Alter", "User", FormMethod.Post))
-{
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => Model.UserID)
-    <div class="form-horizontal">
-        <div class="form-group">
-            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", } })
-                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @Type = "Password" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.FavoritePokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.FavoritePokemonID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.FavoritePokemonID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.FavoriteType, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.FavoriteTypeID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.FavoriteTypeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.GroupOneName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.GroupOneID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GroupOneID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.GroupTwoName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.GroupTwoID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GroupTwoID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.GroupThreeName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.GroupThreeID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GroupThreeID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        @if ((int)Session["RoleID"] == 3)
-        {
+<body style="background-image: url('/Images/Background Images/PokemonUserProfile.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
+    <h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'">Update Your Profile</h2>
+    @using (Html.BeginForm("Alter", "User", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => Model.UserID)
+        @Html.HiddenFor(model => Model.RoleID)
+        <div class="form-horizontal">
             <div class="form-group">
-                @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
                 <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @style = "opacity: .9" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
                 </div>
             </div>
-        }
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                @Html.ActionLink("View Your Profile", "UserProfile", "User", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
-                <input type="submit" value="Update" class="btn btn-default" style="font-family: 'Pokemon Solid'; text-shadow: 1px 1px blue; color: yellow; background-color: black" />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @Type = "Password", @style = "opacity: .9" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @style = "opacity: .9" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @style = "opacity: .9" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @style = "opacity: .9" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FavoritePokemon, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.FavoritePokemonID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control", @style = "opacity: .9" })
+                    @Html.ValidationMessageFor(model => model.FavoritePokemonID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FavoriteType, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.FavoriteTypeID, (List<SelectListItem>)ViewBag.Types, new { @class = "form-control", @style = "opacity: .9" })
+                    @Html.ValidationMessageFor(model => model.FavoriteTypeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.GroupOneName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GroupOneID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control", @style = "opacity: .9" })
+                    @Html.ValidationMessageFor(model => model.GroupOneID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.GroupTwoName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GroupTwoID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control", @style = "opacity: .9" })
+                    @Html.ValidationMessageFor(model => model.GroupTwoID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.GroupThreeName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.GroupThreeID, (List<SelectListItem>)ViewBag.Groups, new { @class = "form-control", @style = "opacity: .9"  })
+                    @Html.ValidationMessageFor(model => model.GroupThreeID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            @if ((int)Session["RoleID"] == 3)
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow; background-color: dimgrey; border-radius: 5px" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control", @style = "opacity: .9" })
+                        @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @Html.ActionLink("View Your Profile", "UserProfile", "User", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
+                    <input type="submit" value="Update" class="btn btn-default" style="font-family: 'Pokemon Solid'; text-shadow: 1px 1px blue; color: yellow; background-color: black" />
+                </div>
             </div>
         </div>
-    </div>
-}
-
+    }
+</body>
