@@ -66,7 +66,7 @@ namespace Pokemon_Capstone.Controllers
             teamData.UpdateTeam(mapper.SingleTeamMap(Update));
             return RedirectToAction("ViewTeam", new {ViewID = Update.TeamID});
         }
-        //a change 
+        //a change 2
         [HttpGet]
         private void PopulateDropDowns()
         {
