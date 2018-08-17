@@ -180,8 +180,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Background Images\Pokemon1.jpg" />
     <Content Include="Images\Background Images\Pokemon2.jpg" />
+    <Content Include="Images\Background Images\PokemonAbout.jpg" />
     <Content Include="Images\Background Images\PokemonLogin.jpg" />
+    <Content Include="Images\Background Images\PokemonMultiUser.jpg" />
     <Content Include="Images\Background Images\PokemonPokemon.png" />
+    <Content Include="Images\Background Images\PokemonTeams.jpg" />
     <Content Include="Images\Background Images\PokemonTypes.jpg" />
     <Content Include="Images\Background Images\PokemonUserProfile.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -212,7 +215,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Pokemon\ViewPokemon.cshtml" />
     <Content Include="Views\Type\ViewTypes.cshtml" />

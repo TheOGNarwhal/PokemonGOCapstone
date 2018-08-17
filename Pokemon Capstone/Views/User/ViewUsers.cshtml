@@ -3,88 +3,89 @@
 @{
     ViewBag.Title = "ViewPokemon";
 }
-
-<h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Users</h1>
-<table class="table table-striped">
-    <tr>
-        <th>Username</th>
-        <th>Password Reset</th>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Delete</th>
-        <th>Update</th>
-    </tr>
-    @foreach (UserPO userInfo in Model.UserList)
-    {
-    <tr>
-        @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+<body style="background-image: url('/Images/Background Images/PokemonMultiUser.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
+    <h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 3px">Users</h1>
+    <table class="table" style="background-color: ghostwhite; opacity: .9">
+        <tr >
+            <th>Username</th>
+            <th>Password Reset</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        @foreach (UserPO userInfo in Model.UserList)
         {
-            @Html.HiddenFor(model => userInfo.UserID)
-            @Html.HiddenFor(model => userInfo.Password)
-            @Html.HiddenFor(model => userInfo.FavoritePokemonID)
-            @Html.HiddenFor(model => userInfo.FavoriteTypeID)
-            @Html.HiddenFor(model => userInfo.GroupOneID)
-            @Html.HiddenFor(model => userInfo.GroupTwoID)
-            @Html.HiddenFor(model => userInfo.GroupThreeID)
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => userInfo.Username, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => userInfo.Username, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </td>
-            <td>
-                @Html.ActionLink("Reset", "Reset", "User", new { Reset = userInfo.UserID }, new { @class = "btn btn-danger" })
-            </td>
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => userInfo.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => userInfo.FirstName, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => userInfo.LastName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => userInfo.LastName, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => userInfo.Email, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => userInfo.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        @Html.DisplayFor(model => userInfo.RoleName, new { htmlAttributes = new { @class = "form-control" } })<br>
-                        @Html.DropDownListFor(model => userInfo.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control", })
-                        @Html.ValidationMessageFor(model => userInfo.RoleID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </td>
-            <td>@Html.ActionLink("Delete", "DeleteUser", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
-            <td>
-                <div class="form-group">
-                    <div class="col-md-10">
-                        <input type="submit" value="Update" class="btn btn-primary" />
-                    </div>
-                </div>
-            </td>
+            <tr>
+                @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+                {
+                    @Html.HiddenFor(model => userInfo.UserID)
+                    @Html.HiddenFor(model => userInfo.Password)
+                    @Html.HiddenFor(model => userInfo.FavoritePokemonID)
+                    @Html.HiddenFor(model => userInfo.FavoriteTypeID)
+                    @Html.HiddenFor(model => userInfo.GroupOneID)
+                    @Html.HiddenFor(model => userInfo.GroupTwoID)
+                    @Html.HiddenFor(model => userInfo.GroupThreeID)
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => userInfo.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Reset", "Reset", "User", new { Reset = userInfo.UserID }, new { @class = "btn btn-danger" })
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => userInfo.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => userInfo.LastName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => userInfo.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => userInfo.RoleName, new { htmlAttributes = new { @class = "form-control" } })<br>
+                                @Html.DropDownListFor(model => userInfo.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control", })
+                                @Html.ValidationMessageFor(model => userInfo.RoleID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>@Html.ActionLink("Delete", "DeleteUser", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="Update" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </td>
+                }
+            </tr>
         }
-    </tr>
-    }
-</table>
-<div class="col-md-10">
-    @Html.ActionLink("View Your Profile", "UserProfile", "User", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
-</div>
-<br>
+    </table>
+    <div class="col-md-10">
+        @Html.ActionLink("View Your Profile", "UserProfile", "User", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })
+    </div>
+</body>
+    <br>
