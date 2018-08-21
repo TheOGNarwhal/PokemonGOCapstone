@@ -1,11 +1,12 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Pokemon_Capstone.Models
+namespace BLL
 {
-    public class TypePO
+    public class TypeBO
     {
         public int TypeID { get; set; }
         public string TypeName { get; set; }
@@ -27,13 +28,5 @@ namespace Pokemon_Capstone.Models
         public decimal xDark { get; set; }
         public decimal xSteel { get; set; }
         public decimal xFairy { get; set; }
-        public int Max { get; set; }
-        public string MaxName { get; set; }
-        public int Max2 { get; set; }
-        public string Max2Name { get; set; }
-        public int Min { get; set; }
-        public string MinName { get; set; }
-        public int Min2 { get; set; }
-        public string Min2Name { get; set; }
     }
 }

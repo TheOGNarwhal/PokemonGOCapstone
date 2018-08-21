@@ -26,7 +26,7 @@
                     {
                     <li>@Html.ActionLink("Pokemon", "ReadPokemon", "Pokemon", "Pokemon", new {@style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
                     <li>@Html.ActionLink("Teams", "UserTeams", "Team", "Team", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
-                    <li>@Html.ActionLink("Groups", "About", "Home", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
+                    <li>@Html.ActionLink("Groups", "ViewGroups", "Group", "Group", new { @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
                     <li>@Html.ActionLink("Profile", "UserProfile", "User", "User", new {area = " ", @style = "color: yellow; text-shadow: .5px .5px blue; letter-spacing: 1.5px" })</li>
                     }
                     @if ((string)Session["Username"] == null)

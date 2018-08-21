@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PokemonController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
@@ -228,6 +229,7 @@
     <Content Include="Views\User\ReLogin.cshtml" />
     <Content Include="Views\Team\CreateTeam.cshtml" />
     <Content Include="Views\Team\ViewTeam.cshtml" />
+    <Content Include="Views\Group\ViewGroups.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

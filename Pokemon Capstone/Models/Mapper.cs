@@ -260,5 +260,22 @@ namespace Pokemon_Capstone.Models
             TeamToList.Pk6Type2Name = TeamToCreate.Pk6Type2Name;
             return TeamToList;
         }
+        public List<int> TypeIDMap(TeamPO TypeIDsToMap)
+        {
+            List<int> IDsToMap = new List<int>();
+            IDsToMap.Add(TypeIDsToMap.Pk1Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk1Type2);
+            IDsToMap.Add(TypeIDsToMap.Pk2Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk2Type2);
+            IDsToMap.Add(TypeIDsToMap.Pk3Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk3Type2);
+            IDsToMap.Add(TypeIDsToMap.Pk4Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk4Type2);
+            IDsToMap.Add(TypeIDsToMap.Pk5Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk5Type2);
+            IDsToMap.Add(TypeIDsToMap.Pk6Type1);
+            IDsToMap.Add(TypeIDsToMap.Pk6Type2);
+            return IDsToMap;
+        }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using DAL;
+using BLL;
 using DAL.DataAccessObjects;
 using System.Data.SqlClient;
 using System.Data;
@@ -229,6 +229,7 @@ namespace DAL
             }
             return teamlist;
         }
+        //Create a method to view a single team from the teams table
         public TeamDAO SelectTeam(TeamDAO TeamToGet)
         {
             TeamDAO TeamToReturn = new TeamDAO();  
@@ -305,6 +306,98 @@ namespace DAL
             }
             return TeamToReturn;
         }
+        //Create a method to calculate the best and worst type for a team to face against
+        static TypeDataAccess typeData = new TypeDataAccess();
+        public TypeDAO CalculateTypes(List<int> TypesToCalculate)
+        {
+            TypeCalculator Calculator = new TypeCalculator();
+            List<TypeDAO> AllDAOTypes = typeData.GetAllTypes();
+            List<TypeBO> AllBOTypes = new List<TypeBO>();
+            foreach (TypeDAO Types in AllDAOTypes)
+            {
+                TypeBO BOTypes = new TypeBO();
+                BOTypes.TypeID = Types.TypeID;
+                BOTypes.TypeName = Types.TypeName;
+                BOTypes.xNormal = Types.xNormal;
+                BOTypes.xFire = Types.xFire;
+                BOTypes.xWater = Types.xWater;
+                BOTypes.xGrass = Types.xGrass;
+                BOTypes.xElectric = Types.xElectric;
+                BOTypes.xIce = Types.xIce;
+                BOTypes.xFighting = Types.xFighting;
+                BOTypes.xPoision = Types.xPoision;
+                BOTypes.xGround = Types.xGround;
+                BOTypes.xFlying = Types.xFlying;
+                BOTypes.xPsychic = Types.xPsychic;
+                BOTypes.xBug = Types.xBug;
+                BOTypes.xRock = Types.xRock;
+                BOTypes.xGhost = Types.xGhost;
+                BOTypes.xDragon = Types.xDragon;
+                BOTypes.xDark = Types.xDark;
+                BOTypes.xSteel = Types.xSteel;
+                BOTypes.xFairy = Types.xFairy;
+                AllBOTypes.Add(BOTypes);
+            }
+            List<TypeBO> TypesToEvaluate = new List<TypeBO>();
+            foreach (int chosenType in TypesToCalculate)
+            {
+                if (chosenType != 19)
+                {
+                    foreach (TypeBO BOType in AllBOTypes)
+                    {
+                        if (chosenType == BOType.TypeID)
+                        {
+                            TypeBO Types = new TypeBO();
+                            Types.TypeID = BOType.TypeID;
+                            Types.TypeName = BOType.TypeName;
+                            Types.xNormal = BOType.xNormal;
+                            Types.xFire = BOType.xFire;
+                            Types.xWater = BOType.xWater;
+                            Types.xGrass = BOType.xGrass;
+                            Types.xElectric = BOType.xElectric;
+                            Types.xIce = BOType.xIce;
+                            Types.xFighting = BOType.xFighting;
+                            Types.xPoision = BOType.xPoision;
+                            Types.xGround = BOType.xGround;
+                            Types.xFlying = BOType.xFlying;
+                            Types.xPsychic = BOType.xPsychic;
+                            Types.xBug = BOType.xBug;
+                            Types.xRock = BOType.xRock;
+                            Types.xGhost = BOType.xGhost;
+                            Types.xDragon = BOType.xDragon;
+                            Types.xDark = BOType.xDark;
+                            Types.xSteel = BOType.xSteel;
+                            Types.xFairy = BOType.xFairy;
+                            TypesToEvaluate.Add(Types);
+                        }
+                    }
+                }
+            }
+            TypeBO FinalTypeValues = Calculator.Calculate(TypesToEvaluate);
+            TypeDAO FinalValues = new TypeDAO();
+            FinalValues.TypeID = FinalTypeValues.TypeID;
+            FinalValues.TypeName = FinalTypeValues.TypeName;
+            FinalValues.xNormal = FinalTypeValues.xNormal;
+            FinalValues.xFire = FinalTypeValues.xFire;
+            FinalValues.xWater = FinalTypeValues.xWater;
+            FinalValues.xGrass = FinalTypeValues.xGrass;
+            FinalValues.xElectric = FinalTypeValues.xElectric;
+            FinalValues.xIce = FinalTypeValues.xIce;
+            FinalValues.xFighting = FinalTypeValues.xFighting;
+            FinalValues.xPoision = FinalTypeValues.xPoision;
+            FinalValues.xGround = FinalTypeValues.xGround;
+            FinalValues.xFlying = FinalTypeValues.xFlying;
+            FinalValues.xPsychic = FinalTypeValues.xPsychic;
+            FinalValues.xBug = FinalTypeValues.xBug;
+            FinalValues.xRock = FinalTypeValues.xRock;
+            FinalValues.xGhost = FinalTypeValues.xGhost;
+            FinalValues.xDragon = FinalTypeValues.xDragon;
+            FinalValues.xDark = FinalTypeValues.xDark;
+            FinalValues.xSteel = FinalTypeValues.xSteel;
+            FinalValues.xFairy = FinalTypeValues.xFairy;
+            return FinalValues;
+        }
+
     }
 }
 

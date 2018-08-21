@@ -1,33 +1,36 @@
 ﻿@model Pokemon_Capstone.Models.UserViewModel
 @using Pokemon_Capstone.Models
-@{
-    ViewBag.Title = "ViewPokemon";
-}
+
 <body style="background-image: url('/Images/Background Images/PokemonMultiUser.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
     <h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 3px">Users</h1>
-    <table class="table" style="background-color: ghostwhite; opacity: .9">
-        <tr >
+    <table class="table" style="background-color: ghostwhite; opacity: .95">
+        <tr>
             <th>Username</th>
             <th>Password Reset</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
             <th>Role</th>
-            <th>Delete</th>
-            <th>Update</th>
+            @if ((int)Session["RoleID"] == 3)
+            {
+                <th>Delete User</th>
+                <th>Update User</th>
+            }
         </tr>
         @foreach (UserPO userInfo in Model.UserList)
         {
-            <tr>
-                @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+        <tr>
+            @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
+            {
+                @Html.HiddenFor(model => userInfo.UserID)
+                @Html.HiddenFor(model => userInfo.Password)
+                @Html.HiddenFor(model => userInfo.FavoritePokemonID)
+                @Html.HiddenFor(model => userInfo.FavoriteTypeID)
+                @Html.HiddenFor(model => userInfo.GroupOneID)
+                @Html.HiddenFor(model => userInfo.GroupTwoID)
+                @Html.HiddenFor(model => userInfo.GroupThreeID)
+                if ((int)Session["RoleID"] == 3)
                 {
-                    @Html.HiddenFor(model => userInfo.UserID)
-                    @Html.HiddenFor(model => userInfo.Password)
-                    @Html.HiddenFor(model => userInfo.FavoritePokemonID)
-                    @Html.HiddenFor(model => userInfo.FavoriteTypeID)
-                    @Html.HiddenFor(model => userInfo.GroupOneID)
-                    @Html.HiddenFor(model => userInfo.GroupTwoID)
-                    @Html.HiddenFor(model => userInfo.GroupThreeID)
                     <td>
                         <div class="form-group">
                             <div class="col-md-10">
@@ -36,9 +39,28 @@
                             </div>
                         </div>
                     </td>
+                }
+                else
+                {
                     <td>
-                        @Html.ActionLink("Reset", "Reset", "User", new { Reset = userInfo.UserID }, new { @class = "btn btn-danger" })
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.Username, new { htmlAttributes = new { @class = "form-control", @disabled = " " } })
+                                @Html.ValidationMessageFor(model => userInfo.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
                     </td>
+                }
+                if ((int)Session["RoleID"] == 3)
+                {
+                    <td>@Html.ActionLink("Reset", "Reset", "User", new { Reset = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                }
+                else
+                {
+                    <td>@Html.ActionLink("Reset", "Reset", "User", new { Reset = userInfo.UserID }, new { @class = "btn btn-danger", @disabled = " " })</td>
+                }
+                if ((int)Session["RoleID"] == 3)
+                {
                     <td>
                         <div class="form-group">
                             <div class="col-md-10">
@@ -47,6 +69,20 @@
                             </div>
                         </div>
                     </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.FirstName, new { htmlAttributes = new { @class = "form-control", @disabled = " " } })
+                                @Html.ValidationMessageFor(model => userInfo.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                }
+                if ((int)Session["RoleID"] == 3)
+                {
                     <td>
                         <div class="form-group">
                             <div class="col-md-10">
@@ -55,6 +91,20 @@
                             </div>
                         </div>
                     </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.LastName, new { htmlAttributes = new { @class = "form-control", @disabled = " " } })
+                                @Html.ValidationMessageFor(model => userInfo.LastName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                }
+                if ((int)Session["RoleID"] == 3)
+                {
                     <td>
                         <div class="form-group">
                             <div class="col-md-10">
@@ -63,25 +113,81 @@
                             </div>
                         </div>
                     </td>
+                }
+                else
+                {
                     <td>
                         <div class="form-group">
                             <div class="col-md-10">
-                                @Html.DisplayFor(model => userInfo.RoleName, new { htmlAttributes = new { @class = "form-control" } })<br>
-                                @Html.DropDownListFor(model => userInfo.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control", })
-                                @Html.ValidationMessageFor(model => userInfo.RoleID, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                    </td>
-                    <td>@Html.ActionLink("Delete", "DeleteUser", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
-                    <td>
-                        <div class="form-group">
-                            <div class="col-md-10">
-                                <input type="submit" value="Update" class="btn btn-primary" />
+                                @Html.EditorFor(model => userInfo.Email, new { htmlAttributes = new { @class = "form-control", @disabled = " " } })
+                                @Html.ValidationMessageFor(model => userInfo.Email, "", new { @class = "text-danger" })
                             </div>
                         </div>
                     </td>
                 }
-            </tr>
+                if ((int)Session["RoleID"] == 3)
+                {
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DisplayFor(model => userInfo.RoleName, new { htmlAttributes = new { @class = "form-control" } })<br>
+                                @Html.DropDownListFor(model => userInfo.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => userInfo.RoleID, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => userInfo.RoleName, new { htmlAttributes = new { @class = "form-control", @disabled = " " } })<br>
+                            </div>
+                        </div>
+                    </td>
+                }
+                if ((string)Session["RoleName"] == "Admin")
+                {
+                    if ((string)Session["RoleName"] == "Admin" && (int)Session["UserID"] != userInfo.UserID && userInfo.UserID != 1)
+                    {
+                        <td>@Html.ActionLink("Delete", "DeleteUser", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                    }
+                    if ((string)Session["RoleName"] == "Admin" && (int)Session["UserID"] == userInfo.UserID && (int)Session["UserID"] != 1)
+                    {
+                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                    }
+                    else if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1)
+                    {
+                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                    }
+                    if ((string)Session["RoleName"] == "Admin" && userInfo.UserID != 1)
+                    {
+                        <td>
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="submit" value="Update" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </td>
+                    }
+                    if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1 && (int)Session["UserID"] != 1)
+                    {
+                        <td>@Html.ActionLink("Can't Update", "ViewUsers", new { area = " " }, new { @class = "btn btn-primary" })</td>
+                    }
+                    if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1 && (int)Session["UserID"] == 1)
+                    {
+                        <td>
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="submit" value="Update" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </td>
+                    }
+                }
+            }
+        </tr>
         }
     </table>
     <div class="col-md-10">
