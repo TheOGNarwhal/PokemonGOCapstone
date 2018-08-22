@@ -81,16 +81,6 @@
                     @Html.ValidationMessageFor(model => model.GroupThreeID, "", new { @class = "text-danger" })
                 </div>
             </div>
-            @if ((int)Session["RoleID"] == 3)
-            {
-                <div class="form-group">
-                    @Html.LabelFor(model => model.RoleName, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-shadow: 1px 1px blue; color: yellow" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.RoleID, (List<SelectListItem>)ViewBag.Roles, new { @class = "form-control", @style = "opacity: .9" })
-                        @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            }
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     @Html.ActionLink("View Your Profile", "UserProfile", "User", new { area = "" }, new { @class = " btn btn-default", @style = "font-family: pokemon solid; color: yellow; background-color: black; text-shadow: 1px 1px blue" })

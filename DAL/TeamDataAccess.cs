@@ -26,7 +26,7 @@ namespace DAL
                 using (SqlConnection connection = new SqlConnection(connectionstring))
                 {
                     //Create a new command object for teh database
-                    using (SqlCommand command = new SqlCommand("sp_ViewTeams", connection))
+                    using (SqlCommand command = new SqlCommand("sp_SelectAllTeams", connection))
                     {
                         //Define what command to send to the database
                         command.CommandType = CommandType.StoredProcedure;
@@ -119,7 +119,7 @@ namespace DAL
                         //This specifies that the object is going to execute a stored procedure for the dataase
                         command.CommandType = CommandType.StoredProcedure;
                         //This specifies the parameters for the stored procedure
-                        command.Parameters.AddWithValue("@TeamID",TeamToDelete.TeamID);
+                        command.Parameters.AddWithValue("@TeamID", TeamToDelete.TeamID);
                         //open the connection
                         connection.Open();
                         //Execute the command
@@ -232,7 +232,7 @@ namespace DAL
         //Create a method to view a single team from the teams table
         public TeamDAO SelectTeam(TeamDAO TeamToGet)
         {
-            TeamDAO TeamToReturn = new TeamDAO();  
+            TeamDAO TeamToReturn = new TeamDAO();
             try
             {
                 //Create a new connection to the database
@@ -268,7 +268,7 @@ namespace DAL
                                 TeamToList.SecondPkID = reader.GetInt32(11);
                                 TeamToList.Pk2Type1 = reader.GetInt32(12);
                                 TeamToList.Pk2Type1Name = reader.GetString(13);
-                                TeamToList.Pk2Type2= reader.GetInt32(14);
+                                TeamToList.Pk2Type2 = reader.GetInt32(14);
                                 TeamToList.Pk2Type2Name = reader.GetString(15);
                                 TeamToList.ThirdPokemon = reader.GetString(16);
                                 TeamToList.ThirdPkID = reader.GetInt32(17);
@@ -306,15 +306,21 @@ namespace DAL
             }
             return TeamToReturn;
         }
-        //Create a method to calculate the best and worst type for a team to face against
+        //Instantiate a new instance of the TypeDataAccess method
         static TypeDataAccess typeData = new TypeDataAccess();
+        //Create a method to calculate the best and worst type for a team to face against
         public TypeDAO CalculateTypes(List<int> TypesToCalculate)
         {
+            //Instantiate a new instance of the TypeCalculator object
             TypeCalculator Calculator = new TypeCalculator();
+            //Get all types in the types table and assign them to a TypeDAO List
             List<TypeDAO> AllDAOTypes = typeData.GetAllTypes();
+            //Create a new Instance of the TypeBO List
             List<TypeBO> AllBOTypes = new List<TypeBO>();
+            //Loop thorugh TypeDAO List and map each type and values into a TypeBO Value and send it to the TypeBO List
             foreach (TypeDAO Types in AllDAOTypes)
             {
+                //Create a new instance of the TypeBO Object
                 TypeBO BOTypes = new TypeBO();
                 BOTypes.TypeID = Types.TypeID;
                 BOTypes.TypeName = Types.TypeName;
@@ -338,13 +344,19 @@ namespace DAL
                 BOTypes.xFairy = Types.xFairy;
                 AllBOTypes.Add(BOTypes);
             }
+            //Create a new TypeBO Object
             List<TypeBO> TypesToEvaluate = new List<TypeBO>();
+            //Loop through the list of interagers passed as a parameter
             foreach (int chosenType in TypesToCalculate)
             {
+                //Check to make sure the type is not null
                 if (chosenType != 19)
                 {
+                    //Loop thorugh all types in the TypeBO List
                     foreach (TypeBO BOType in AllBOTypes)
                     {
+                        //Search through the typeBO List until the typeID matches the given interager and add the values of that type to the TypesToEvaluate List
+                        //Repeat this until all types have been sifted through
                         if (chosenType == BOType.TypeID)
                         {
                             TypeBO Types = new TypeBO();
@@ -373,10 +385,11 @@ namespace DAL
                     }
                 }
             }
+            //Send the final list of Types to the Buissness logic layer to be evaluated
             TypeBO FinalTypeValues = Calculator.Calculate(TypesToEvaluate);
+            //Create a new instance of the TypeDAO Object
             TypeDAO FinalValues = new TypeDAO();
-            FinalValues.TypeID = FinalTypeValues.TypeID;
-            FinalValues.TypeName = FinalTypeValues.TypeName;
+            //Map the new calculated values from TypeBO To TypeDAO
             FinalValues.xNormal = FinalTypeValues.xNormal;
             FinalValues.xFire = FinalTypeValues.xFire;
             FinalValues.xWater = FinalTypeValues.xWater;
@@ -395,9 +408,71 @@ namespace DAL
             FinalValues.xDark = FinalTypeValues.xDark;
             FinalValues.xSteel = FinalTypeValues.xSteel;
             FinalValues.xFairy = FinalTypeValues.xFairy;
+            FinalValues.Max = FinalTypeValues.Max;
+            FinalValues.Max2 = FinalTypeValues.Max2;
+            FinalValues.MaxName = FinalTypeValues.MaxName;
+            FinalValues.Max2Name = FinalTypeValues.Max2Name;
+            FinalValues.Min = FinalTypeValues.Min;
+            FinalValues.Min2 = FinalTypeValues.Min2;
+            FinalValues.MinName = FinalTypeValues.MinName;
+            FinalValues.Min2Name = FinalTypeValues.Min2Name;
+            //Return the final values to the Presentation Layer
             return FinalValues;
         }
+        //Create a stored procedure to select all teams
+        public List<TeamDAO> SelectAllTeams()
+        {
+            //Instantiate a new instance of the List<TeamDAO> object
+            List<TeamDAO> teamlist = new List<TeamDAO>();
+            //Create a new connection to the database
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionstring))
+                {
+                    //Create a new command for the database
+                    using (SqlCommand command = new SqlCommand("sp_SelectAllTeams", connection))
+                    {
+                        //State that the command is a stored procedure for the database
+                        command.CommandType = CommandType.StoredProcedure;
+                        //Add parameters for the storedprocedure
+                        //Open the connection
+                        connection.Open();
+                        //Open the sql data reader
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                //Create a new teamDAO Variable to store values
+                                TeamDAO TeamToList = new TeamDAO();
+                                TeamToList.TeamID = reader.GetInt32(0);
+                                TeamToList.TeamName = reader.GetString(1);
+                                TeamToList.Creator = reader.GetString(2);
+                                TeamToList.CreatorID = reader.GetInt32(3);
+                                TeamToList.FirstPokemon = reader.GetString(4);
+                                TeamToList.FirstPkID = reader.GetInt32(5);
+                                TeamToList.SecondPokemon = reader.GetString(6);
+                                TeamToList.SecondPkID = reader.GetInt32(7);
+                                TeamToList.ThirdPokemon = reader.GetString(8);
+                                TeamToList.ThirdPkID = reader.GetInt32(9);
+                                TeamToList.FourthPokemon = reader.GetString(10);
+                                TeamToList.FourthPkID = reader.GetInt32(11);
+                                TeamToList.FifthPokemon = reader.GetString(12);
+                                TeamToList.FifthPkID = reader.GetInt32(13);
+                                TeamToList.SixthPokemon = reader.GetString(14);
+                                TeamToList.SixthPkID = reader.GetInt32(15);
+                                teamlist.Add(TeamToList);
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
 
+            }
+            return teamlist;
+
+        }
     }
 }
 

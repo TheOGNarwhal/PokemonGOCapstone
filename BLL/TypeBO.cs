@@ -28,5 +28,13 @@ namespace BLL
         public decimal xDark { get; set; }
         public decimal xSteel { get; set; }
         public decimal xFairy { get; set; }
+        public int Max { get; set; }
+        public string MaxName { get; set; }
+        public int Max2 { get; set; }
+        public string Max2Name { get; set; }
+        public int Min { get; set; }
+        public string MinName { get; set; }
+        public int Min2 { get; set; }
+        public string Min2Name { get; set; }
     }
 }
