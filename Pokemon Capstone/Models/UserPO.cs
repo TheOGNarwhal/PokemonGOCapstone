@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pokemon_Capstone.Models
 {
     public class UserPO
     {
         public int UserID { get; set; }
+        [Required(ErrorMessage = "You Did Not Enter A Valid Username")]
         public string Username { get; set; }
+        [Required]
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -52,16 +52,35 @@ namespace Pokemon_Capstone.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpGet]
-        public ActionResult Register()
+        public ActionResult Register(int check)
         {
+            if (check == 1)
+            {
+                ViewBag.Error = "Sorry, Something went wrong. One of the fields was empty or invalid";
+            }
             return View();
         }
         [HttpPost]
         public ActionResult Register(UserPO Create)
         {
-            UserDAO UserToCreate = mapper.SingleUserMap(Create);
-            UserData.CreateUser(UserToCreate);
-            return RedirectToAction("Login");
+            if (ModelState.IsValid)
+            {
+                if (Create.Email.Contains("@") & Create.Email.Contains(".") & Create.FirstName != null & Create.LastName != null )
+                {
+                    UserDAO UserToCreate = mapper.SingleUserMap(Create);
+                    UserData.CreateUser(UserToCreate);
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    return RedirectToAction("Register", new { check = 1 });
+                }
+            }
+            else
+            {
+                return RedirectToAction("Register", new {check = 1 });
+            }
+            
         }
         [HttpGet]
         public ActionResult Logout()
