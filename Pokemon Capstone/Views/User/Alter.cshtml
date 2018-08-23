@@ -4,7 +4,7 @@
     ViewBag.Title = "Profile";
 }
 <body style="background-image: url('/Images/Background Images/PokemonUserProfile.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
-    <h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'">Update Your Profile</h2>
+    <h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'; letter-spacing: 2px"><u>Update Your Profile</u></h2>
     @using (Html.BeginForm("Alter", "User", FormMethod.Post))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

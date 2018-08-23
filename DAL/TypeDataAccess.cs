@@ -7,6 +7,7 @@ using System.Configuration;
 using DAL.DataAccessObjects;
 using DAL;
 using System.Data.SqlClient;
+using Logger;
 
 namespace DAL
 {
@@ -67,7 +68,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return typelist;
         }

@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using DAL.DataAccessObjects;
+using Logger;
 
 namespace DAL
 {
@@ -44,7 +45,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return grouplist; 
         }
@@ -78,7 +80,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a new method to delete a group
@@ -109,7 +112,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a new method to Update a group
@@ -143,7 +147,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
     }

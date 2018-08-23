@@ -8,6 +8,7 @@ using DAL.DataAccessObjects;
 using DAL;
 using System.Data.SqlClient;
 using System.Data;
+using Logger;
 
 namespace DAL
 {
@@ -61,9 +62,10 @@ namespace DAL
                     }
                 }
             }
-            catch
+            catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return userlist;
         }
@@ -100,8 +102,10 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
+        
         }
         //Create a new method for deleting a user
         public void DeleteUser(UserDAO UserToDelete)
@@ -131,7 +135,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a method for updating users
@@ -173,7 +178,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a method for logging in
@@ -226,7 +232,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return loggeduser;
         }
@@ -279,7 +286,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return userProfile;
         }
@@ -311,7 +319,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
     }

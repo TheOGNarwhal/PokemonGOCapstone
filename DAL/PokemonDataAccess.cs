@@ -8,7 +8,7 @@ using DAL;
 using DAL.DataAccessObjects;
 using System.Data.SqlClient;
 using System.Data;
-
+using Logger;
 namespace DAL
 {
     public class PokemonDataAccess
@@ -53,7 +53,8 @@ namespace DAL
             }
             catch (Exception errorCaught )
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             //return the values recorded in the list
             return pokemonlist;
@@ -87,7 +88,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a method to delete a pokemon
@@ -118,7 +120,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a method to update a pokemon
@@ -153,7 +156,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
     }

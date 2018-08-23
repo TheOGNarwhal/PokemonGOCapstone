@@ -4,7 +4,7 @@
     ViewBag.Title = "RegisterView";
 }
 <body style="background-image: url('/Images/Background Images/PokemonLogin.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
-    <h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'">Register</h2>
+    <h2 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 2px"><u>Register</u></h2>
     @using (Html.BeginForm("Register", "User", FormMethod.Post))
     {
         @Html.AntiForgeryToken()

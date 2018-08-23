@@ -8,6 +8,7 @@ using BLL;
 using DAL.DataAccessObjects;
 using System.Data.SqlClient;
 using System.Data;
+using Logger;
 
 namespace DAL
 {
@@ -63,7 +64,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return teamlist;
         }
@@ -102,7 +104,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a new method to delete a team
@@ -133,7 +136,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a new method to  update a team
@@ -172,7 +176,8 @@ namespace DAL
             }
             catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
         }
         //Create a method to view a single users teams
@@ -223,9 +228,10 @@ namespace DAL
                     }
                 }
             }
-            catch
+            catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return teamlist;
         }
@@ -300,9 +306,10 @@ namespace DAL
                     }
                 }
             }
-            catch
+            catch (Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return TeamToReturn;
         }
@@ -466,9 +473,10 @@ namespace DAL
                     }
                 }
             }
-            catch
+            catch(Exception errorCaught)
             {
-
+                ErrorLogger errorToLog = new ErrorLogger();
+                errorToLog.errorlogger(errorCaught);
             }
             return teamlist;
 

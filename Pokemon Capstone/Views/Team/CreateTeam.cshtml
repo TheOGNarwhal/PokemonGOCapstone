@@ -2,7 +2,7 @@
 @using Pokemon_Capstone.Models
 
 <body style="background-image: url('/Images/Background Images/PokemonTeams.jpg'); background-repeat: no-repeat; position: center; background-size: contain; background-attachment: fixed">
-    <h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'; letter-spacing: 2.5px">Create Your Team</h2>
+    <h2 style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'; letter-spacing: 2.5px"><u>Create Your Team</u></h2>
     @using (Html.BeginForm("CreateTeam", "Team", FormMethod.Post))
     {
         @Html.HiddenFor(model => model.CreatorID)

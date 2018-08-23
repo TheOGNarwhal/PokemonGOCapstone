@@ -5,7 +5,7 @@
     ViewBag.Title = "CreateTeam";
 }
 <body style="background-image: url('/Images/Background Images/PokemonTeams.jpg'); background-repeat: no-repeat; position: center; background-size: contain; background-attachment: fixed">
-    <h2  class="col-md-4" style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'; letter-spacing: 2.5px; background-color: dimgrey; border-radius: 5px; opacity: .95; padding: 10px">Update Your Team</h2>
+    <h2  class="col-md-4" style="color: yellow; text-shadow: 2px 1px Blue; font-family: 'Pokemon Solid'; letter-spacing: 2.5px; background-color: dimgrey; border-radius: 5px; opacity: .95; padding: 10px"><u>Update Your Team</u></h2>
     <table class="table" style="opacity: .95">
         @using (Html.BeginForm("UpdateTeam", "Team", FormMethod.Post))
         {
@@ -2163,8 +2163,7 @@
             <td style="background-color: #7F09AF">
                 <div class="form-group">
                     <div class="col-md-10">
-                        @Html.DropDownListFor(models => Model.SixthPkID, (List<SelectListItem>
-                            )ViewBag.Pokemon, new { @class = "form-control"})
+                        @Html.DropDownListFor(models => Model.SixthPkID, (List<SelectListItem>)ViewBag.Pokemon, new { @class = "form-control"})
                             @Html.ValidationMessageFor(model => Model.SixthPkID, "", new { @class = "text-danger" })
                     </div>
                 </div>

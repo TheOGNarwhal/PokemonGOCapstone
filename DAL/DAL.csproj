@@ -61,6 +61,10 @@
       <Project>{ef5f61ef-eb43-4c7c-a110-43444b623cc2}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UtilityLogger\UtilityLogger.csproj">
+      <Project>{c139e9c1-21c0-4e08-aa27-521e88740a1a}</Project>
+      <Name>UtilityLogger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

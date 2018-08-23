@@ -35,9 +35,6 @@ namespace BLL
             //Loop through the list of Types passed as a parameter and multiply the multiplier for each type to the current value in the BWTypes object
             foreach (TypeBO Types in TypesToCalculate)
             {
-                //Check to see if the given type is the place holder type that has no value
-                if (Types.TypeID != 19)
-                {
                     //The != 0 are to check for null values as they would ruin the multiplication process
                     if (Types.xNormal != 0)
                     {
@@ -111,11 +108,6 @@ namespace BLL
                     {
                         BWTypes.xFairy = Types.xFairy * BWTypes.xFairy;
                     }
-                }
-                else
-                {
-                    //Nothing Should Happen as 19 is Assigned to NONE My placeholder Type
-                }
             }
             //Create a new Decimal List to Store the Newly calculated values
             List<Decimal> BestWorst = new List<Decimal>();
