@@ -327,7 +327,7 @@ namespace DAL
             //Loop thorugh TypeDAO List and map each type and values into a TypeBO Value and send it to the TypeBO List
             foreach (TypeDAO Types in AllDAOTypes)
             {
-                //Create a new instance of the TypeBO Object
+                //Create a new instance of the TypeBO Objectt
                 TypeBO BOTypes = new TypeBO();
                 BOTypes.TypeID = Types.TypeID;
                 BOTypes.TypeName = Types.TypeName;
