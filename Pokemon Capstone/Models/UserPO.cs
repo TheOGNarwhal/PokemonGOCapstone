@@ -9,7 +9,7 @@ namespace Pokemon_Capstone.Models
     public class UserPO
     {
         public int UserID { get; set; }
-        [Required(ErrorMessage = "You Did Not Enter A Valid Username")]
+        [Required]
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
