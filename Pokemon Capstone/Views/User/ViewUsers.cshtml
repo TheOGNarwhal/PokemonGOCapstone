@@ -3,6 +3,10 @@
 
 <body style="background-image: url('/Images/Background Images/PokemonMultiUser.jpg'); background-repeat: no-repeat; position: center; background-size: cover; background-attachment: fixed">
     <h1 style="color: yellow; text-shadow: 2px 1px blue; font-family: 'Pokemon Solid'; letter-spacing: 3px"><u>Users</u></h1>
+    @if (ViewBag.Delete != null)
+    {
+    <h4 style="color: yellow; font-family: 'Pokemon Solid'; text-shadow: 1.5px 1px blue; letter-spacing: 3px; background-color: #fe1c1c; border-radius: 5px; padding: 9px; border: 3px double green">@ViewBag.Delete</h4>
+    }
     <table class="table" style="background-color: ghostwhite; opacity: .95">
         <tr>
             <th>Username</th>
@@ -170,17 +174,17 @@
                 }
                 if ((string)Session["RoleName"] == "Admin")
                 {
-                    if ((string)Session["RoleName"] == "Admin" && (int)Session["UserID"] != userInfo.UserID && userInfo.UserID != 1)
+                    if ((int)Session["RoleID"] == 3 && (int)Session["UserID"] != userInfo.UserID && userInfo.UserID != 1)
                     {
                         <td>@Html.ActionLink("Delete", "DeleteUser", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
                     }
-                    if ((string)Session["RoleName"] == "Admin" && (int)Session["UserID"] == userInfo.UserID && (int)Session["UserID"] != 1)
+                    else if ((int)Session["RoleID"] == 3 && (int)Session["UserID"] == userInfo.UserID && (int)Session["UserID"] != 1)
                     {
-                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { check = 2 }, new { @class = "btn btn-danger" })</td>
                     }
                     else if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1)
                     {
-                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { UserToDeleteID = userInfo.UserID }, new { @class = "btn btn-danger" })</td>
+                        <td>@Html.ActionLink("Can't Delete", "ViewUsers", new { check = 3 }, new { @class = "btn btn-danger" })</td>
                     }
                     if ((string)Session["RoleName"] == "Admin" && userInfo.UserID != 1)
                     {
@@ -194,7 +198,7 @@
                     }
                     if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1 && (int)Session["UserID"] != 1)
                     {
-                        <td>@Html.ActionLink("Can't Update", "ViewUsers", new { area = " " }, new { @class = "btn btn-primary" })</td>
+                        <td>@Html.ActionLink("Can't Update", "ViewUsers", new { check = 4 }, new { @class = "btn btn-primary" })</td>
                     }
                     if ((string)Session["RoleName"] == "Admin" && userInfo.UserID == 1 && (int)Session["UserID"] == 1)
                     {

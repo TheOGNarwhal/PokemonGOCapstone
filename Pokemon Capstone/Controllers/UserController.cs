@@ -65,11 +65,18 @@ namespace Pokemon_Capstone.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Create.Email.Contains("@") & Create.Email.Contains(".") & Create.FirstName != null & Create.LastName != null )
+                if (Create.Email != null)
                 {
-                    UserDAO UserToCreate = mapper.SingleUserMap(Create);
-                    UserData.CreateUser(UserToCreate);
-                    return RedirectToAction("Login");
+                    if (Create.Email.Contains("@") & Create.Email.Contains(".") & Create.FirstName != null & Create.LastName != null)
+                    {
+                        UserDAO UserToCreate = mapper.SingleUserMap(Create);
+                        UserData.CreateUser(UserToCreate);
+                        return RedirectToAction("Login");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Register", new { check = 1 });
+                    }
                 }
                 else
                 {
@@ -78,7 +85,7 @@ namespace Pokemon_Capstone.Controllers
             }
             else
             {
-                return RedirectToAction("Register", new {check = 1 });
+               return RedirectToAction("Register", new { check = 1 });
             }
             
         }
@@ -141,8 +148,20 @@ namespace Pokemon_Capstone.Controllers
             ViewBag.Roles.Add(new SelectListItem { Text = "User", Value = "1" });
         }
         [HttpGet]
-        public ActionResult ViewUsers()
+        public ActionResult ViewUsers(int check)
         {
+            if (check == 3)
+            {
+                ViewBag.Delete = "Your Attack was not very effective...";
+            }
+            if (check == 2)
+            {
+                ViewBag.Delete = "User Hurt Itself In Confusion...";
+            }
+            if (check == 4)
+            {
+                ViewBag.Delete = "You Can't Steal Other Trainers Pokemon!";
+            }
             PopulateDropDowns();
             UserViewModel UserModel = new UserViewModel();
             UserModel.UserList = mapper.UserMap(UserData.GetAllUsers());
@@ -154,7 +173,7 @@ namespace Pokemon_Capstone.Controllers
             PopulateDropDowns();
             UserDAO oldUserToUpdate = mapper.SingleUserMap(userInfo);
             UserData.UpdateUser(oldUserToUpdate);
-            return RedirectToAction("ViewUsers");
+            return RedirectToAction("ViewUsers", new { check = 1 });
         }
         [HttpGet]
         public ActionResult Reset(int Reset)
@@ -162,7 +181,7 @@ namespace Pokemon_Capstone.Controllers
             UserDAO resetUser = new UserDAO();
             resetUser.UserID = Reset;
             UserData.ResetPassword(resetUser);
-            return RedirectToAction("ViewUsers");
+            return RedirectToAction("ViewUsers", new { check = 1 });
         }
         [HttpGet]
         public ActionResult DeleteUser(int UserToDeleteID)
@@ -170,7 +189,7 @@ namespace Pokemon_Capstone.Controllers
             UserDAO UserToDelete = new UserDAO();
             UserToDelete.UserID = UserToDeleteID;
             UserData.DeleteUser(UserToDelete);
-            return RedirectToAction("ViewUsers");
+            return RedirectToAction("ViewUsers", new {check = 1 });
         }
     }
 }
