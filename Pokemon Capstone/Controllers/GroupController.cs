@@ -10,6 +10,7 @@ namespace Pokemon_Capstone.Controllers
     {
         // GET: Group
         [HttpGet]
+        //
         public ActionResult ViewGroups()
         {
             return View();

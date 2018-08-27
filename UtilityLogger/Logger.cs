@@ -25,7 +25,7 @@ namespace Logger
             message += Environment.NewLine;
             message += "-----------------------------------";
             message += Environment.NewLine;
-
+            //
             using (StreamWriter _writer = new StreamWriter("C:\\Users\\admin2\\downloads\\PokemonErrorLogs.txt", true))
             {
                 _writer.WriteLine(message);

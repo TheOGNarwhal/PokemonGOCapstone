@@ -511,7 +511,7 @@ namespace BLL
             BWTypes.Min2 = ChosenTypes.Min2;
             BWTypes.MinName = ChosenTypes.MinName;
             BWTypes.Min2Name = ChosenTypes.Min2Name;
-            //Send back the newly calculated Values
+            //Send back the newly calculated Valuess
             return BWTypes;
         }
     }
